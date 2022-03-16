@@ -22,7 +22,7 @@ public class ShoppingCart {
      * 
      * @return total base price
      */
-    private Double calBasePrice() {
+    protected Double calBasePrice() {
         Double totalPrice = 0.0;
 
         for (Product product : shoppingCart) {
@@ -31,7 +31,6 @@ public class ShoppingCart {
             }
         }
         return totalPrice;
-
     }
 
     /**
@@ -44,7 +43,7 @@ public class ShoppingCart {
         Double totalTax = 0.0;
         for (Product product : shoppingCart) {
             if (product != null) {
-                totalTax += product.addTaxToPrice();
+                totalTax += product.productTax();
             }
         }
         return totalTax;

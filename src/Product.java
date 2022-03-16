@@ -55,5 +55,18 @@ public class Product {
         }
         return price;
     }
+    protected double productTax(){
+        double tax = 0.0;
+
+        if(this.type != ItemType.FOOD && this.type != ItemType.BOOK && this.type != ItemType.MEDICAL_PRODUCTS ){
+            tax =  (this.price * 10 /100);
+        }
+
+        if(this.isImported){
+            tax += price * (5/100);
+        }
+
+        return tax;
+    }
 
 }
