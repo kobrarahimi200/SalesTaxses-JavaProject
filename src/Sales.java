@@ -4,7 +4,7 @@ import java.util.List;
 public class Sales {
 
     private List<Product> products = new LinkedList<>();
-    private List<Product> shoppingCart = new LinkedList<>();
+    
 
     
  
@@ -17,19 +17,6 @@ public class Sales {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-
-
-
-    public List<Product> getShoppingCart() {
-        return shoppingCart;
-    }
-
-
-
-    public void setShoppingCart(List<Product> shoppingCart) {
-        this.shoppingCart = shoppingCart;
-    }
-
 
 
     protected void addProductsToList(){
