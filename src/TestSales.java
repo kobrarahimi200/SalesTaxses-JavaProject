@@ -24,7 +24,7 @@ public class TestSales {
     };
 
     @Test
-    public void testCalcTotalTax() {
+    public void testCalcTotalTax_ForInput1() {
         Product product1 = new Product("book", 12.49, false, ItemType.BOOK);
         Product product2 = new Product("music CD", 14.99, false, ItemType.OTHERS);
         Product product3 = new Product("chocholate", 0.85, false, ItemType.FOOD);
@@ -47,4 +47,13 @@ public class TestSales {
         assertEquals(29.83, cart.getPriceWithTax(), 0.01);
     };
    
+    @Test
+    public void testCalcSalesTax_ForInput2() {
+        Product product1 = new Product("imported box of chocholate", 10.00, true, ItemType.FOOD);
+        Product product2 = new Product("bottle of perfume", 47.50, true, ItemType.OTHERS);
+        ShoppingCart cart = new ShoppingCart();
+        cart.addToCart(product1);
+        cart.addToCart(product2);
+        assertEquals(7.65, cart.roundUp(cart.calcTotalTax()) , 0.01);
+    };
 }

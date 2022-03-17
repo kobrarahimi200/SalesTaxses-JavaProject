@@ -1,8 +1,8 @@
 public class Product {
-    private String name;
-    private Double price;
-    private boolean isImported;
-    private  ItemType type;
+    private String name; // name of the product
+    private Double price; // price of the product
+    private boolean isImported;// if the product is imported the value is set to true
+    private ItemType type; // product type
 
     public Product(String name, Double price, boolean isImported, ItemType type) {
         this.name = name;
@@ -43,29 +43,44 @@ public class Product {
         this.type = type;
     }
 
-    protected Double addTaxToPrice(){
-        Double price =0.0;
-        if(this.type != ItemType.FOOD && this.type != ItemType.BOOK && this.type != ItemType.MEDICAL_PRODUCTS ){
-            price = this.price + (this.price * 10 /100);
-        }else{
+    /**
+     * checks if the product is not food, book and medical products, then add 10%
+     * tax to the price.
+     * then checks if the product is imported then add 5% tax to the price of that.
+     * 
+     * @return price of the product
+     */
+    protected Double addTaxToPrice() {
+        Double price = 0.0;
+        if (this.type != ItemType.FOOD && this.type != ItemType.BOOK && this.type != ItemType.MEDICAL_PRODUCTS) {
+            price = this.price + (this.price * 10 / 100);
+        } else {
             price = this.price;
         }
-        if(this.isImported){
-            price += price * (5/100);
+        if (this.isImported) {
+            price += price * (5 / 100);
         }
         return price;
     }
-    protected double productTax(){
+
+    /**
+     * calculate the tax for each product
+     * 
+     * @return the tax of the product
+     */
+    protected double productTax() {
         double tax = 0.0;
 
-        if(this.type != ItemType.FOOD && this.type != ItemType.BOOK && this.type != ItemType.MEDICAL_PRODUCTS ){
-            tax =  (this.price * 10 /100);
+        if (this.type != ItemType.FOOD && this.type != ItemType.BOOK && this.type != ItemType.MEDICAL_PRODUCTS) {
+            tax = (this.price * 10 / 100);
         }
-
-        if(this.isImported){
-            tax += price * (5/100);
+        System.out.println("is imported "+isImported);
+        if(isImported) {
+            System.out.println("inside is imported!" + (this.price * 5 / 100));
+        
+            tax += (this.price * 5 / 100);
         }
-
+        System.out.println("tax in product " + tax+ " price " + this.price);
         return tax;
     }
 

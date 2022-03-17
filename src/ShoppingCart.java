@@ -22,8 +22,8 @@ public class ShoppingCart {
      * 
      * @return total base price
      */
-    protected Double calBasePrice() {
-        Double totalPrice = 0.0;
+    protected double calBasePrice() {
+        double totalPrice = 0.0;
 
         for (Product product : shoppingCart) {
             if (product != null) {
@@ -34,13 +34,14 @@ public class ShoppingCart {
     }
 
     /**
-     * calculate the tax for each product
+     * calculate the total tax for the products which are added to the shopping
+     * carts.
      * 
-     * @return
+     * @return total tax od all products in the cart
      */
-    protected Double calcTotalTax() {
+    protected double calcTotalTax() {
 
-        Double totalTax = 0.0;
+        double totalTax = 0.0;
         for (Product product : shoppingCart) {
             if (product != null) {
                 totalTax += product.productTax();
@@ -54,7 +55,11 @@ public class ShoppingCart {
      * 
      * @return
      */
-    protected Double getPriceWithTax() {
+    protected double getPriceWithTax() {
         return calBasePrice() + calcTotalTax();
+    }
+
+    public double roundUp(double num){
+        return (Math.ceil(num*20)/20);
     }
 }
