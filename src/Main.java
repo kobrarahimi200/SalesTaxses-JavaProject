@@ -7,7 +7,8 @@ public class Main {
         Sales allProducts = new Sales();
         allProducts.addProductsToList();
         int enteredNumer = 0;
-        List<Integer> selectedItems = new LinkedList<>();
+        int numOfItem =0;
+        List<Integer> numOfSelectedItem = new LinkedList<>();
         Scanner scan = new Scanner(System.in);
         ShoppingCart cart = new ShoppingCart();
 
@@ -18,15 +19,29 @@ public class Main {
         enteredNumer = scan.nextInt();
 
         while (enteredNumer != 0) {
-            if (enteredNumer >= 1 && enteredNumer <= allProducts.getProducts().size()) {
-                selectedItems.add(enteredNumer);
-                cart.addToCart(allProducts.getProducts().get(enteredNumer - 1));
+            if (enteredNumer >= 1 && enteredNumer <= allProducts.getProducts().size() + 1) {
+                
+                if(enteredNumer == allProducts.getProducts().size() + 1){
+                    
+                    showAllProducts(allProducts.getProducts());
+                    
+                }else{
+                    System.out.print("please enter number of your products \n");
+                    numOfItem = scan.nextInt();
+                    cart.addToCart(allProducts.getProducts().get(enteredNumer - 1), numOfItem);
+
+                    System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
+                        " or \n 0 is to exit or \n " + (allProducts.getProducts().size() + 1) +" to show the list. "+ "\n" + " Prodcut ID : ");
+                }
+                //1numOfSelectedItem.add(numOfItem);
+
             } else {
-                System.out.println(" please enter your product id between 1 to " + allProducts.getProducts().size() +
-                        " and 0 is to exit");
+                System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
+                        " and 0 is to exit" + "\n" + " Prodcut ID : ");
             }
 
             enteredNumer = scan.nextInt();
+
         }
 
         scan.close(); // finishing the order
@@ -52,15 +67,13 @@ public class Main {
     /**
      * shows the final list of selected Items to the user
      * 
-     * @param cartItem      is the list of all products
+     * @param cartItem  is the list of all products
      */
     private static void showShoppingCart(ShoppingCart cartItem) {
-
-      
-
         for (int i = 0; i < cartItem.getShoppingCart().size(); i++) {
-                    System.out.println(cartItem.getShoppingCart().get(i).getName() + ": " +
-                            String.format("%.2f", cartItem.getShoppingCart().get(i).getTotalPrice()));
+                    System.out.println("> "+ cartItem.getShoppingCart().get(i).getNumberOfProducts() + " "
+                     + cartItem.getShoppingCart().get(i).getProduct().getName() + ": " +
+                            String.format("%.2f", cartItem.getShoppingCart().get(i).getProduct().getTotalPrice()));
         }
         System.out.println("Sales Taxes: " + String.format("%.2f",cartItem.calcTotalTax()));
         System.out.println("Total: " +String.format("%.2f", cartItem.getPriceWithTax()));

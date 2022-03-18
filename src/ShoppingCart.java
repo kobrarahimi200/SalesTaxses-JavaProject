@@ -3,24 +3,22 @@ import java.util.List;
 
 public class ShoppingCart {
 
-    private List<Product> shoppingCart = new LinkedList<>();
+    private List<ProductInCart> shoppingCart = new LinkedList<>();
 
-    public List<Product> getShoppingCart() {
+    public List<ProductInCart> getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(List<Product> shoppingCart) {
+    public void setShoppingCart(List<ProductInCart> shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 
-    protected void addToCart(Product item) {
-        for (Product product : shoppingCart) {
-            if(this.shoppingCart.contains(item)){
-                
-            }
-        }
-       
-        this.shoppingCart.add(item);
+    protected void addToCart(Product item, int numberOfProducts) {
+
+        ProductInCart product = new ProductInCart(numberOfProducts, item);
+
+        this.shoppingCart.add(product);
+        
     }
 
     /**
@@ -31,9 +29,9 @@ public class ShoppingCart {
     protected double calBasePrice() {
         double totalPrice = 0.0;
 
-        for (Product product : shoppingCart) {
+        for (ProductInCart product : shoppingCart) {
             if (product != null) {
-                totalPrice += product.getPrice();
+                totalPrice += product.getProduct().getPrice() * product.getNumberOfProducts();
             }
         }
         return totalPrice;
@@ -48,9 +46,9 @@ public class ShoppingCart {
     protected double calcTotalTax() {
 
         double totalTax = 0.0;
-        for (Product product : shoppingCart) {
+        for (ProductInCart product : shoppingCart) {
             if (product != null) {
-                totalTax += product.productTax();
+                totalTax += product.getProduct().productTax() * product.getNumberOfProducts();
             }
         }
         return totalTax;

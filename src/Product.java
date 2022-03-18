@@ -115,7 +115,7 @@ public class Product {
         if (this.isImported) {
             results += "imported ";
         }
-        results += this.getName() + " at " + this.getPrice();
+        results += this.getName() + " : " + this.getPrice();
 
         return results;
 
