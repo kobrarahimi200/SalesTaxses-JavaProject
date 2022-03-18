@@ -1,4 +1,5 @@
 public class Product {
+ 
     private String name; // name of the product
     private Double price; // price of the product
     private boolean isImported;// if the product is imported the value is set to true
@@ -82,6 +83,21 @@ public class Product {
         }
         System.out.println("tax in product " + tax+ " price " + this.price);
         return tax;
+    }
+
+    /**
+     * convert to string.
+     */
+    public String toString(){
+        String results = "";
+
+        if(this.isImported){ 
+            results += "imported ";
+        }
+        results += this.getName() + " at " + this.getPrice(); 
+
+    return results;
+
     }
 
 }

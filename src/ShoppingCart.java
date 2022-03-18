@@ -47,7 +47,7 @@ public class ShoppingCart {
                 totalTax += product.productTax();
             }
         }
-        return totalTax;
+        return roundUp(totalTax);
     }
 
     /**
@@ -59,7 +59,13 @@ public class ShoppingCart {
         return calBasePrice() + calcTotalTax();
     }
 
-    public double roundUp(double num){
-        return (Math.ceil(num*20)/20);
+    /**
+     * round up the given number
+     * 
+     * @param num
+     * @return
+     */
+    public double roundUp(double num) {
+        return (Math.ceil(num * 20) / 20);
     }
 }
