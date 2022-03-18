@@ -75,8 +75,8 @@ public class Main {
                      + cartItem.getShoppingCart().get(i).getProduct().getName() + ": " +
                             String.format("%.2f", cartItem.getShoppingCart().get(i).getProduct().getTotalPrice()));
         }
-        System.out.println("Sales Taxes: " + String.format("%.2f",cartItem.calcTotalTax()));
-        System.out.println("Total: " +String.format("%.2f", cartItem.getPriceWithTax()));
+        System.out.println("> Sales Taxes: " + String.format("%.2f",cartItem.calcTotalTax()));
+        System.out.println("> Total: " +String.format("%.2f", cartItem.getPriceWithTax()));
     
     }
 }
