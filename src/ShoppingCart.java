@@ -14,6 +14,12 @@ public class ShoppingCart {
     }
 
     protected void addToCart(Product item) {
+        for (Product product : shoppingCart) {
+            if(this.shoppingCart.contains(item)){
+                
+            }
+        }
+       
         this.shoppingCart.add(item);
     }
 
@@ -47,7 +53,7 @@ public class ShoppingCart {
                 totalTax += product.productTax();
             }
         }
-        return roundUp(totalTax);
+        return totalTax;
     }
 
     /**
@@ -59,13 +65,5 @@ public class ShoppingCart {
         return calBasePrice() + calcTotalTax();
     }
 
-    /**
-     * round up the given number
-     * 
-     * @param num
-     * @return
-     */
-    public double roundUp(double num) {
-        return (Math.ceil(num * 20) / 20);
-    }
+ 
 }
