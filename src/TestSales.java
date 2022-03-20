@@ -8,7 +8,7 @@ public class TestSales {
     public void testNumOfProducts() {
         Sales sale = new Sales();
         sale.addProductsToList();
-        assertEquals(9, sale.getProducts().size());
+        assertEquals(10, sale.getProducts().size());
     };
 
     @Test

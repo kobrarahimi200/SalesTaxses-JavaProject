@@ -16,9 +16,23 @@ public class ShoppingCart {
     protected void addToCart(Product item, int numberOfProducts) {
 
         ProductInCart product = new ProductInCart(numberOfProducts, item);
-
-        this.shoppingCart.add(product);
+        ProductInCart foundProduct = listContainsProduct(product);
+        if(foundProduct != null){
+            foundProduct.setNumberOfProducts(foundProduct.getNumberOfProducts() + numberOfProducts);
+        }else{
+            this.shoppingCart.add(product);
+        }
         
+    }
+    
+    private ProductInCart listContainsProduct(ProductInCart item){
+
+        for(ProductInCart product: this.shoppingCart){
+            if(product.getProduct().getId() == item.getProduct().getId()){
+                return product;
+            }
+        }
+        return null;
     }
 
     /**

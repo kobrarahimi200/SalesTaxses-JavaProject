@@ -27,13 +27,14 @@ public class Main {
                     
                 }else{
                     System.out.print("please enter number of your products \n");
+
                     numOfItem = scan.nextInt();
                     cart.addToCart(allProducts.getProducts().get(enteredNumer - 1), numOfItem);
 
                     System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
                         " or \n 0 is to exit or \n " + (allProducts.getProducts().size() + 1) +" to show the list. "+ "\n" + " Prodcut ID : ");
                 }
-                //1numOfSelectedItem.add(numOfItem);
+                
 
             } else {
                 System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
@@ -60,7 +61,7 @@ public class Main {
 
         System.out.println("List of Products: ");
         for (int i = 0; i < products.size(); i++) {
-            System.out.println((i + 1) + " " + products.get(i).toString());
+            System.out.println(products.get(i).getId() + " " + products.get(i).toString());
         }
     }
 
