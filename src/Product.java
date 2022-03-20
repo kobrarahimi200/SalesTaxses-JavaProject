@@ -1,3 +1,6 @@
+/**
+ * class of the product with all required attributes
+ */
 public class Product {
 
     private int id; // identifer of the product
@@ -14,16 +17,13 @@ public class Product {
         this.type = type;
     }
 
-    
     public int getId() {
         return id;
     }
 
-
     public void setId(int id) {
         this.id = id;
     }
-
 
     public String getName() {
         return name;
@@ -57,30 +57,11 @@ public class Product {
         this.type = type;
     }
 
-    // /**
-    // * checks if the product is not food, book and medical products, then add 10%
-    // * tax to the price.
-    // * then checks if the product is imported then add 5% tax to the price of
-    // that.
-    // *
-    // * @return total price of the product
-    // */
-    // protected Double addTaxToPrice() {
-    // Double price = 0.0;
-    // if (this.type != ItemType.FOOD && this.type != ItemType.BOOK && this.type !=
-    // ItemType.MEDICAL_PRODUCTS) {
-    // price = this.price + (this.price * 10 / 100);
-    // } else {
-    // price = this.price;
-    // }
-    // if (this.isImported) {
-    // price += this.price * (5 / 100);
-    // }
-    // return price;
-    // }
-
     /**
-     * calculate the tax for each product
+     * calculate the tax for each product.checks if the type is not food, meedical
+     * products and books,
+     * theese items do not have tax, other products have 10% tax.
+     * if the product is imported then tax of 5% is added to the price of that.
      * 
      * @return only the tax of the product
      */

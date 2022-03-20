@@ -1,20 +1,19 @@
-import java.util.LinkedList;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Sales allProducts = new Sales();
-        allProducts.addProductsToList();
-        int enteredNumer = 0;
-        int numOfItem =0;
-        List<Integer> numOfSelectedItem = new LinkedList<>();
+        allProducts.addProductsToList();//adding all products to the list
+        int enteredNumer = 0; //the number that user enter it
+        int numOfItem =0; //number of each product(item)
         Scanner scan = new Scanner(System.in);
         ShoppingCart cart = new ShoppingCart();
 
         showAllProducts(allProducts.getProducts());
         System.out.println();
-        System.out.println(" please enter your product id between 1 to " + allProducts.getProducts().size());
+        System.out.println(" please enter your product ID between 1 to " + allProducts.getProducts().size());
 
         enteredNumer = scan.nextInt();
 
@@ -34,7 +33,6 @@ public class Main {
                     System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
                         " or \n 0 is to exit or \n " + (allProducts.getProducts().size() + 1) +" to show the list. "+ "\n" + " Prodcut ID : ");
                 }
-                
 
             } else {
                 System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
