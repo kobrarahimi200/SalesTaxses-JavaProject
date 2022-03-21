@@ -124,4 +124,37 @@ public class TestSales {
         cart.addToCart(product, 1);
         assertEquals(37.3, cart.getPriceWithTax(), 0.01);
     };
+
+    @Test
+    public void testCalcTotalPrice_ThreeProducts() {
+        Product product = new Product(9, "textiles", 32.40, true, ItemType.TEXTILE);
+        ShoppingCart cart = new ShoppingCart();
+        cart.addToCart(product, 3);
+        assertEquals(111.89, cart.getPriceWithTax(), 0.01);
+    };
+
+    @Test
+    public void testCalcTotalPrice_FourProducts() {
+        Product product1 = new Product(9, "bootle of perfume", 18.99, true, ItemType.OTHERS);
+        Product product2 = new Product(1, "book", 12.49, false, ItemType.BOOK);
+        Product product3 = new Product(2, "music CD", 14.99, false, ItemType.OTHERS);
+        ShoppingCart cart = new ShoppingCart();
+        cart.addToCart(product1, 2);
+        cart.addToCart(product2, 3);
+        cart.addToCart(product3, 1);
+        assertEquals(97.63, cart.getPriceWithTax(), 0.01);
+    };
+    @Test
+    public void testCalcTotalPrice_FiveProducts() {
+        Product product1 = new Product(9, "bootle of perfume", 18.99, true, ItemType.OTHERS);
+        Product product2 = new Product(1, "book", 12.49, false, ItemType.BOOK);
+        Product product3 = new Product(2, "music CD", 14.99, false, ItemType.OTHERS);
+        Product product4 = new Product(2, "music CD", 14.99, false, ItemType.OTHERS);
+        ShoppingCart cart = new ShoppingCart();
+        cart.addToCart(product1, 2);
+        cart.addToCart(product2, 3);
+        cart.addToCart(product3, 1);
+        cart.addToCart(product4, 5);
+        assertEquals(180.08, cart.getPriceWithTax(), 0.01);
+    };
 }
