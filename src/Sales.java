@@ -2,7 +2,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * this class is responsible for the product list 
+ * this class is responsible for the product list. It creates a list that contains the list of
+ * all products.
  */
 public class Sales {
 

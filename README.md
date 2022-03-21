@@ -45,12 +45,17 @@ and calcTotalTax(calculate the total tax for the products which are added to the
 
 and the Sale class is responsible for the list of all products.
 
-## How To play
+## How To run
 
-You can run the program by clicking on the "SalesTaxes.jar" then the list of all products are displayed. 
+Please download the program and open the command line. Go to the directory of the project folder with name of "SalesTaxses-JavaProject-master".
+
+write the command "java -jar --enable-preview SalesTaxes.jar".
+
+ Atfer runnig successfuly you will be able to see the list of all products. 
 
 
 A.
+
 1 book : 12.49
 2 music CD : 14.99
 3 chocolate bar : 0.85
