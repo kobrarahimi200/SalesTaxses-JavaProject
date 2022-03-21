@@ -49,13 +49,13 @@ and the Sale class is responsible for the list of all products.
 
 Please download the program and open the command line. Go to the directory of the project folder with name of "SalesTaxses-JavaProject-master".
 
-write the command "java -jar --enable-preview SalesTaxes.jar".
+write the command `java -jar --enable-preview SalesTaxes.jar`.
 
  Atfer runnig successfuly you will be able to see the list of all products. 
 
 
 A.
-
+```
 1 book : 12.49
 2 music CD : 14.99
 3 chocolate bar : 0.85
@@ -66,26 +66,35 @@ A.
 8 bottle of perfume : 18.99
 9 imported textile : 32.4
 10 imported box of chocolates : 11.25
+```
 
 the left number is the id for product , name if the product , then the price for each unit.
 then the bellow message is displayed.
 
-B. "please enter your product id between 1 to 10"
+B.
+```
+please enter your product id between 1 to 10
+```
 
 The number of all products are 10 so the selected number should be between 1 and 10.
  Now User can choose his/her product IDs. After entering the product ID the bellow message is shown:
 
-C. "please enter number of your products "
+C.
+```
+please enter number of your products
+```
 
  User can enter the number of selected item.
 
  Then the bellow messages are shown:
 
  D.
-" please enter your product id between 1 to 10 or 
+ ```
+ please enter your product id between 1 to 10 or 
  0 is to exit or 
  11 to show the list. 
- Prodcut ID : "
+ Prodcut ID :
+ ```
 
  if he wants to continue shopping he can repeat the step B and C. 
  The 0 is used to exit the program.
