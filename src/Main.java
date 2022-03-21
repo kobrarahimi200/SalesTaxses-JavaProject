@@ -35,7 +35,7 @@ public class Main {
                 }
 
             } else {
-                System.out.println(" \n please enter your product id between 1 to " + allProducts.getProducts().size() +
+                System.out.println(" \n please enter your product ID between 1 to " + allProducts.getProducts().size() +
                         " and 0 is to exit" + "\n" + " Prodcut ID : ");
             }
 

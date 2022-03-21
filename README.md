@@ -52,7 +52,7 @@ Please download the program and open the command line. Go to the directory of th
 write the command `java -jar --enable-preview SalesTaxes.jar`.
 
  Atfer runnig successfuly you will be able to see the list of all products. 
-
+A, B, C and D are the output message that you see them on commandline.
 
 A.
 ```
@@ -73,7 +73,7 @@ then the bellow message is displayed.
 
 B.
 ```
-please enter your product id between 1 to 10
+please enter your product ID between 1 to 10
 ```
 
 The number of all products are 10 so the selected number should be between 1 and 10.
